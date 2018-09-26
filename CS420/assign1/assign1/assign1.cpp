@@ -228,6 +228,10 @@ int main(int argc, char* argv[])
 	    the code past here will segfault if you don't have a window set up....
 	    replace the exit once you add those calls.
 	*/
+	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+	glutInitWindowSize(640, 480);
+	glutInitWindowPosition(100, 100);
+	glutCreateWindow("test");
 
 	/* tells glut to use a particular display function to redraw */
 	glutDisplayFunc(display);
