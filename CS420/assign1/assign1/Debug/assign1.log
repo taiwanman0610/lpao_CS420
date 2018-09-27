@@ -1,6 +1,3 @@
 ﻿  assign1.cpp
-c:\users\leon\documents\github\lpao_cs420\cs420\assign1\assign1\assign1.cpp(42): warning C4129: 'P': unrecognized character escape sequence
-c:\users\leon\documents\github\lpao_cs420\cs420\assign1\assign1\assign1.cpp(42): warning C4129: 'I': unrecognized character escape sequence
-c:\users\leon\documents\github\lpao_cs420\cs420\assign1\assign1\assign1.cpp(42): warning C4129: 'c': unrecognized character escape sequence
 c:\users\leon\documents\github\lpao_cs420\cs420\assign1\assign1\assign1.cpp(49): warning C4101: 'j': unreferenced local variable
   assign1.vcxproj -> C:\Users\Leon\Documents\GitHub\lpao_CS420\CS420\assign1\Debug\assign1.exe

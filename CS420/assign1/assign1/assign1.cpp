@@ -39,7 +39,7 @@ CImg<unsigned char> *g_pHeightData;
 /* Please install ImageMagick and replace the path below to the correct path to convert.exe on your computer */
 void initializeImageMagick()
 {
-	cimg::imagemagick_path("C:\Program Files\ImageMagick-7.0.8-Q16\convert.exe", true);
+	cimg::imagemagick_path("convert.exe", true);
 }
 
 
@@ -81,6 +81,9 @@ void display()
   /* you may also want to precede it with your 
 rotation/translation/scaling */
 
+  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+  glLoadIdentity();
+
   glBegin(GL_POLYGON);
 
   glColor3f(1.0, 1.0, 1.0);
@@ -93,6 +96,7 @@ rotation/translation/scaling */
   glVertex3f(0.5, -0.5, 0.0);
 
   glEnd();
+  glutSwapBuffers();
 }
 
 void menufunc(int value)
@@ -228,11 +232,11 @@ int main(int argc, char* argv[])
 	    the code past here will segfault if you don't have a window set up....
 	    replace the exit once you add those calls.
 	*/
-	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
-	glutInitWindowSize(640, 480);
+	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	glutInitWindowPosition(100, 100);
-	glutCreateWindow("test");
-
+	glutInitWindowSize(640, 480);
+	glutCreateWindow("Assignment 1");
+	
 	/* tells glut to use a particular display function to redraw */
 	glutDisplayFunc(display);
   
