@@ -46,7 +46,7 @@ void initializeImageMagick()
 /* Write a screenshot to the specified filename */
 void saveScreenshot (char *filename)
 {
-  int i, j;
+  int i;
 
   if (filename == NULL)
     return;
@@ -202,6 +202,15 @@ void mousebutton(int button, int state, int x, int y)
   g_vMousePos[1] = y;
 }
 
+void reshape(int w, int h)
+{
+	glViewport(0, 0, (GLsizei)w, (GLsizei)h);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluPerspective(60.0, 2.0, 0.1, 1000.0);
+	glMatrixMode(GL_MODELVIEW);
+}
+
 int main(int argc, char* argv[])
 {
 	// I've set the argv[1] to spiral.jpg.
@@ -255,6 +264,8 @@ int main(int argc, char* argv[])
 	glutPassiveMotionFunc(mouseidle);
 	/* callback for mouse button changes */
 	glutMouseFunc(mousebutton);
+	/* reshape/projection view */
+	//glutReshapeFunc(reshape);
 
 	/* do initialization */
 	myinit();
